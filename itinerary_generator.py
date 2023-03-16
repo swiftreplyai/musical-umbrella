@@ -4,8 +4,8 @@ import openai
 secrets = st.secrets["openai"]
 openai.api_key = secrets["api_key"]
 
-st.title("Itinerary Generator with ChatGPT")
-st.markdown("Enter the destination, number of days, and your interests, then click 'Generate Itinerary'.")
+st.title("Itinerary Genie")
+st.markdown("Enter the destination, number of days, and your interests, then click 'Generate Itinerary'. Shazam!")
 
 model_engine = "text-davinci-002"
 openai.api_key = secrets["api_key"]
