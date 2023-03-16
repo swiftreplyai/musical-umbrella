@@ -11,8 +11,7 @@ model_engine = "text-davinci-002"
 openai.api_key = secrets["api_key"]
 
 def generate_itinerary(destination, days, interests):
-    prompt = f"As an expert on {destination}, create a detailed and persuasive itinerary for a {days}-day trip, focusing on the following interests: {', '.join(interests)}. The itinerary should include recommended activities, accommodations, and other suggestions that showcase the unique experiences and charm of the destination. Consider the destination's history, culture, local attractions, and natural beauty. Describe each day's activities and their significance, as well as how they cater to the specific interests of the traveler. Paint a vivid picture of the experience, enticing the reader to book the trip."
-
+    prompt = f"As a specialist in {destination}, devise an all-encompassing and enthralling {days}-day expedition plan that caters to these particular interests: {', '.join(interests)}. The plan should incorporate a wealth of suggestions, including engaging activities, top-rated accommodations, and insider tips that reveal the exceptional charm of the destination. Delve into the destination's rich history, vibrant culture, must-see attractions, and breathtaking natural wonders. For each day of the journey, provide a comprehensive rundown of activities and their significance, ensuring they align with the traveler's interests. Offer practical information such as opening hours, entrance fees, and the best time to visit each attraction, as well as recommendations for nearby dining and shopping options. Paint a vivid and captivating picture of the entire experience, from the morning's first light to the evening's last glimmer. Include anecdotes, lesser-known facts, and insider secrets to truly bring the destination to life."
     response = openai.Completion.create(
         engine=model_engine,
         prompt=prompt,
