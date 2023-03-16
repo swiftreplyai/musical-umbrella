@@ -6,6 +6,9 @@
 import streamlit as st
 import openai
 
+secrets = st.secrets["openai"]
+openai.api_key = secrets["api_key"]
+
 # Step 3: Initialize Streamlit app
 st.title("Itinerary Generator with ChatGPT")
 
@@ -18,7 +21,7 @@ generate_button = st.button("Generate Itinerary")
 
 # Step 5: Create a function to generate itinerary using ChatGPT
 def generate_itinerary(destination, days, interests):
-    openai.api_key = "your_openai_api_key_here"
+    openai.api_key = secrets["api_key"]
     prompt = f"Create a detailed itinerary for a {days}-day trip to {destination} with a focus on the following interests: {', '.join(interests)}. Include recommended activities, accommodations, and other suggestions."
     response = openai.Completion.create(
         engine="text-davinci-002",
